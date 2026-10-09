@@ -1,0 +1,26 @@
+2026-10-06 20:21:57,519 [INFO] [EXTRACT] Lectura fuente: SQL: INGRESOS=78977, EGRESOS=54637; columnas validadas (in=133614, out=133614) -> OK
+2026-10-06 20:21:57,612 [INFO] [TRANSFORM] Duplicados INGRESOS: drop_duplicates por (uuid, historia) (in=78977, out=78977) -> OK
+2026-10-06 20:21:57,663 [INFO] [TRANSFORM] Fechas INGRESOS: rechaza fec_filiacion nula o fuera de 2022-2026 (in=78977, out=78977) -> OK
+2026-10-06 20:21:57,669 [INFO] [TRANSFORM] Cantidad INGRESOS: cant_atenciones_cex nulo o negativo -> 0 (in=78977, out=78977) -> OK
+2026-10-06 20:21:58,626 [INFO] [TRANSFORM] Normalizacion INGRESOS: ubigeo 6 digitos, sexo, rango de edad, lugar_residencia (in=78977, out=78977) -> OK
+2026-10-06 20:21:58,759 [WARNING] [TRANSFORM] Duplicados EGRESOS: drop_duplicates por (uuid, historia, fecha_ingreso, fecha_egreso) (in=54637, out=54603) -> ADVERTENCIA
+2026-10-06 20:21:58,813 [INFO] [TRANSFORM] Fechas EGRESOS: rechazadas: nulas=0, fuera de rango=0, egreso<ingreso=0 (in=54603, out=54603) -> OK
+2026-10-06 20:21:58,818 [INFO] [TRANSFORM] Dias de estancia: fecha_egreso - fecha_ingreso (PDE) (in=54603, out=54603) -> OK
+2026-10-06 20:22:00,420 [INFO] [TRANSFORM] Normalizacion EGRESOS: ubigeo 6 digitos, sexo, rango de edad, lugar_residencia (in=54603, out=54603) -> OK
+2026-10-06 20:22:03,615 [INFO] [LOAD] dim_ubigeo: insertados solo codigos nuevos (000000 = DESCONOCIDO ya existe) (in=1806, out=1806) -> OK
+2026-10-06 20:22:24,133 [INFO] [LOAD] fact_atencion: DELETE + INSERT por lotes de 5000, misma transaccion que las dimensiones (in=133580, out=133580) -> OK
+2026-10-06 20:22:24,406 [INFO] [VALIDATE] Conciliacion INGRESO: esperado=78977, cargado=78977 (in=78977, out=78977) -> OK
+2026-10-06 20:22:24,407 [INFO] [VALIDATE] Conciliacion EGRESO: esperado=54603, cargado=54603 (in=54603, out=54603) -> OK
+2026-10-06 20:30:52,428 [INFO] [EXTRACT] Lectura fuente: SQL: INGRESOS=78977, EGRESOS=54637; columnas validadas (in=133614, out=133614) -> OK
+2026-10-06 20:30:52,531 [INFO] [TRANSFORM] Duplicados INGRESOS: drop_duplicates por (uuid, historia) (in=78977, out=78977) -> OK
+2026-10-06 20:30:52,578 [INFO] [TRANSFORM] Fechas INGRESOS: rechaza fec_filiacion nula o fuera de 2022-2026 (in=78977, out=78977) -> OK
+2026-10-06 20:30:52,583 [INFO] [TRANSFORM] Cantidad INGRESOS: cant_atenciones_cex nulo o negativo -> 0 (in=78977, out=78977) -> OK
+2026-10-06 20:30:53,949 [INFO] [TRANSFORM] Normalizacion INGRESOS: ubigeo 6 digitos, sexo, rango de edad, lugar_residencia (in=78977, out=78977) -> OK
+2026-10-06 20:30:54,115 [WARNING] [TRANSFORM] Duplicados EGRESOS: drop_duplicates por (uuid, historia, fecha_ingreso, fecha_egreso) (in=54637, out=54603) -> ADVERTENCIA
+2026-10-06 20:30:54,189 [INFO] [TRANSFORM] Fechas EGRESOS: rechazadas: nulas=0, fuera de rango=0, egreso<ingreso=0 (in=54603, out=54603) -> OK
+2026-10-06 20:30:54,198 [INFO] [TRANSFORM] Dias de estancia: fecha_egreso - fecha_ingreso (PDE) (in=54603, out=54603) -> OK
+2026-10-06 20:30:55,014 [INFO] [TRANSFORM] Normalizacion EGRESOS: ubigeo 6 digitos, sexo, rango de edad, lugar_residencia (in=54603, out=54603) -> OK
+2026-10-06 20:30:56,277 [INFO] [LOAD] dim_ubigeo: insertados solo codigos nuevos (000000 = DESCONOCIDO ya existe) (in=1806, out=0) -> OK
+2026-10-06 20:31:22,055 [INFO] [LOAD] fact_atencion: DELETE + INSERT por lotes de 5000, misma transaccion que las dimensiones (in=133580, out=133580) -> OK
+2026-10-06 20:31:22,896 [INFO] [VALIDATE] Conciliacion INGRESO: esperado=78977, cargado=78977 (in=78977, out=78977) -> OK
+2026-10-06 20:31:22,897 [INFO] [VALIDATE] Conciliacion EGRESO: esperado=54603, cargado=54603 (in=54603, out=54603) -> OK

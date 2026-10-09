@@ -1,0 +1,15 @@
+2026-10-07 17:12:29,116 - INFO - [PASO: 2911616935.py] - === INICIANDO SUB-PROCESO ETL CARGA NUMERO: 1 ===
+2026-10-07 17:12:29,117 - INFO - [PASO: 2911616935.py] - [EXTRACT] Extrayendo datos desde origen transaccional PACIENTES_IyE...
+2026-10-07 17:12:29,117 - INFO - [PASO: 2911616935.py] - [EXTRACT] Leyendo tabla dbo.INGRESOS. Grano esperado: 78975 registros.
+2026-10-07 17:12:29,264 - INFO - [PASO: 2911616935.py] - [EXTRACT] Leyendo tabla dbo.EGRESOS. Grano esperado: 54636 registros.
+2026-10-07 17:12:29,328 - INFO - [PASO: 2911616935.py] - [EXTRACT] Extracción completada sin errores de conexión.
+2026-10-07 17:12:29,328 - INFO - [PASO: 2911616935.py] - [TRANSFORM] Iniciando motor de reglas de calidad y anonimización...
+2026-10-07 17:12:29,329 - INFO - [PASO: 2911616935.py] - [TRANSFORM] Procesando subset: INGRESOS.
+2026-10-07 17:12:29,591 - INFO - [PASO: 2911616935.py] - [TRANSFORM] Ubigeos Ingresos: 15707 rellenados con cero, 0 nulos asignados a '000000'.
+2026-10-07 17:12:30,152 - INFO - [PASO: 2911616935.py] - [TRANSFORM] Procesando subset: EGRESOS.
+2026-10-07 17:12:30,835 - INFO - [PASO: 2911616935.py] - [LOAD] Preparando estructura final unificada para Tabla de Hechos...
+2026-10-07 17:12:30,837 - INFO - [PASO: 2911616935.py] - [VALIDATE] === CONCILIACIÓN DE INTEGRIDAD FIN DE FLUJO ===
+2026-10-07 17:12:30,838 - INFO - [PASO: 2911616935.py] - [VALIDATE] PROCESO INGRESOS: Inicial=78975 | Duplicados=0 | Cargados=78975
+2026-10-07 17:12:30,838 - INFO - [PASO: 2911616935.py] - [VALIDATE] PROCESO EGRESOS: Inicial=54636 | Duplicados=0 | Rechazados Temporal=0 | Cargados=54636
+2026-10-07 17:12:30,838 - INFO - [PASO: 2911616935.py] - [LOAD] Inserción por bloques simulada exitosamente. Total hechos: 133611 registros.
+2026-10-07 17:12:30,838 - INFO - [PASO: 2911616935.py] - === PROCESO ETL FINALIZADO CON ESTADO [OK] ===
